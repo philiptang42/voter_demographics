@@ -5,7 +5,7 @@ demographics = [
     age: 25,
     income: 50000,
     household_size: 1,
-    gender: 'Male'
+    gender: 'Male',
     education: 'College'
   },
   {
@@ -29,7 +29,7 @@ demographics = [
   {
     first_name: 'Joan',
     last_name: 'Favreau',
-    age: 35
+    age: 35,
     income: 65000,
     household_size: 4,
     gender: 'Female',
@@ -77,7 +77,7 @@ demographics = [
     age: 45,
     income: 75000,
     household_size: 1,
-    gender: 'Male'
+    gender: 'Male',
     education: 'College'
   },
   {
@@ -105,4 +105,36 @@ demographics.each do |person|
   age_total += person[:age]
   income_total += person[:income]
   household_size_total += person[:household_size]
-  
+
+  if person[:gender] == 'Male'
+    male_total += 1
+  elsif person[:gender] == 'Female'
+    female_total += 1
+  else
+    unspecified_gender_total += 1
+  end
+
+  if person[:education] == "College"
+    college_total += 1
+  elsif person[:education] == "High School"
+    high_school_total += 1
+  else
+    no_high_school_total += 1
+  end
+end
+
+puts "Average Age: #{(age_total / demographics.size.to_f)}"
+puts "Average Income: #{(income_total / demographics.size.to_f)}"
+puts "Average Household Size: #{(household_size_total / demographics.size.to_f)}"
+
+female_percentage = (female_total / demographics.size.to_f) * 100
+male_percentage = (male_total / demographics.size.to_f) * 100
+unspecified_gender_percentage = (unspecified_gender_total / demographics.size.to_f) * 100
+
+puts "Female %: #{female_percentage}"
+puts "Male %: #{male_percentage}"
+puts "Unspecified Gender %: #{unspecified_gender_percentage}"
+
+puts "College %: #{(college_total / demographics.size.to_f) * 100}"
+puts "High School %: #{(high_school_total / demographics.size.to_f) * 100}"
+puts "Did Not Finish High School %: #{(no_high_school_total / demographics.size.to_f) * 100}"
