@@ -9,13 +9,13 @@ demographics = [
     education: 'College'
   },
   {
-    first_name:
-    last_name:
-    age:
-    income:
-    household_size:
-    gender:
-    education:
+    first_name: 'Jane',
+    last_name: 'Davies',
+    age: 30,
+    income: 60000,
+    household_size: 3,
+    gender: 'Female',
+    education: 'High School'
   },
   {
     first_name:
