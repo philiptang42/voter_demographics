@@ -47,11 +47,11 @@ demographics = [
   {
     first_name: 'Mark',
     last_name: 'Minahan',
-    age: 38,
-    income: 63000,
-    household_size: 3,
+    age: 48,
+    income: 78000,
+    household_size: 5,
     gender: 'Male',
-    education: 'College'
+    education: 'High School'
   },
   {
     first_name: 'Susan',
@@ -100,3 +100,9 @@ unspecified_gender_total = 0
 college_total = 0
 high_school_total = 0
 no_high_school_total = 0
+
+demographics.each do |person|
+  age_total += person[:age]
+  income_total += person[:income]
+  household_size_total += person[:household_size]
+  
